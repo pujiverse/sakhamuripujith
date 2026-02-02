@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pujith Sakhamuri | Data Engineer & AI Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --gray-color: #6b7280;
+            --success-color: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        #navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-btn {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        #hero-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero-role {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        #hero-summary {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        #summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--light-color);
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .experience-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .experience-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .experience-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .experience-content {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            color: var(--success-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .university {
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .update-info {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .last-update {
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--gray-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-links {
+                justify-content: center;
+            }
+            
+            .profile-img-container {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                font-size: 1.5rem;
+            }
+            
+            #hero-name {
+                font-size: 2.5rem;
+            }
+            
+            #hero-role {
+                font-size: 1.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .experience-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .experience-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-img-container {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Pujith Sakhamuri</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="hero-name">Pujith Sakhamuri</h1>
+                    <h2 id="hero-role">Data Engineer</h2>
+                    <p id="hero-summary">6+ years of experience in Data Engineering, ML/AI, building scalable data pipelines, NLP, Computer Vision, Generative AI, and MLOps solutions.</p>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/pujith-s-284a4219b/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:sakhamuripujith@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-img-container">
+                        <!-- Try different image sources -->
+                        <img id="profile-image" 
+                             alt="Pujith Sakhamuri" 
+                             class="profile-img">
+                        <div id="image-placeholder" class="image-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                            <div>Profile Photo</div>
+                            <small>Upload to replace</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p id="summary-text">6+ years of experience in Data Engineering, ML/AI, building scalable data pipelines, NLP, Computer Vision, Generative AI, and MLOps solutions.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <span id="phone-number">+1(216)307-4418</span></p>
+                        <p><i class="fas fa-envelope"></i> <span id="email-address">sakhamuripujith@gmail.com</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Based in <span id="location">Austin, TX</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div id="skills-container" class="skills-grid">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div id="experience-container" class="timeline">
+                <!-- Experience will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div id="education-container" class="education-grid">
+                <!-- Education will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> <span id="contact-email">sakhamuripujith@gmail.com</span></p>
+                    <p><i class="fas fa-phone"></i> <span id="contact-phone">+1(216)307-4418</span></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pujith-s-284a4219b/" target="_blank">LinkedIn Profile</a></p>
+                </div>
+                <div class="update-info">
+                    <h3>Auto-Update Feature</h3>
+                    <p>This portfolio automatically updates from my Google Sheet. Any changes made to the spreadsheet will reflect here on page refresh.</p>
+                    <p class="last-update">Last Updated: <span id="last-updated">Just now</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Pujith Sakhamuri. All rights reserved.</p>
+            <p>Portfolio auto-updated from Google Sheets</p>
+        </div>
+    </footer>
+
+    <script>
+        // HARDCODED DATA - This will show your skills, experience, and education
+        const skillsData = [
+            { "Category": "Programming Languages", "Skills": "Python, SQL, R, Java, Scala, Shell Scripting" },
+            { "Category": "Frameworks & Tools", "Skills": "Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Keras, Flask, Django, FastAPI, LangChain" },
+            { "Category": "Big Data & ETL", "Skills": "Apache Spark, PySpark, Kafka, Airflow, Hadoop, Snowflake, dbt" },
+            { "Category": "Cloud Platforms", "Skills": "AWS, Azure, GCP" },
+            { "Category": "Databases", "Skills": "Oracle, MySQL, PostgreSQL, SQL Server, MongoDB, Cassandra, Redis" },
+            { "Category": "MLOps & DevOps", "Skills": "MLflow, Kubeflow, Docker, Kubernetes, Jenkins, GitHub Actions" },
+            { "Category": "Visualization", "Skills": "Power BI, Tableau, Matplotlib, Excel" }
+        ];
+
+        const experienceData = [
+            {
+                "Company": "Proofpoint Inc.",
+                "Location": "Austin, TX",
+                "Role": "Data Engineer",
+                "Start Date": "May 2024",
+                "End Date": "Present",
+                "Responsibilities": "Built Generative AI pipelines, ETL workflows, optimized SQL workloads, deployed models using Docker/Kubernetes.",
+                "Environment": "LangChain, GPT, Spark, Kafka, AWS, Docker, Kubernetes"
+            },
+            {
+                "Company": "Cleveland Clinic",
+                "Location": "Cleveland, OH",
+                "Role": "AI/ML Engineer",
+                "Start Date": "Jan 2023",
+                "End Date": "Apr 2024",
+                "Responsibilities": "Developed NLP and CV models, automated ML pipelines, A/B testing, deployed models at scale.",
+                "Environment": "Python, PyTorch, TensorFlow, GCP, AWS, MLflow, Kubeflow"
+            },
+            {
+                "Company": "ECo Global Consulting",
+                "Location": "Hyderabad, India",
+                "Role": "Data Scientist",
+                "Start Date": "Oct 2020",
+                "End Date": "Dec 2021",
+                "Responsibilities": "Built ML pipelines, NLP systems, forecasting models, deployed to AWS.",
+                "Environment": "Python, R, Spark, TensorFlow, Docker, Airflow"
+            },
+            {
+                "Company": "Carmax Auto Superstore Inc.",
+                "Location": "Hyderabad, India",
+                "Role": "Data Engineer / Python Developer",
+                "Start Date": "May 2019",
+                "End Date": "Sep 2020",
+                "Responsibilities": "Developed full-stack apps, ETL pipelines, batch scheduling, CI/CD automation.",
+                "Environment": "Python, Django, Spark, Airflow, AWS, Docker"
+            }
+        ];
+
+        const educationData = [
+            {
+                "University": "Cleveland State University",
+                "Degree": "MS in Computer Science",
+                "Location": "Cleveland, OH",
+                "Start Date": "Jan 2022",
+                "End Date": "May 2023",
+                "GPA": "3.1 / 4.0",
+                "Activities": "Data Mining, ML, Big Data, Student Services Specialist",
+                "Achievements": "Completed advanced coursework and projects in Machine Learning, Big Data Analytics, and Cloud Computing; Gained hands-on experience with Azure Databricks, Power BI, PySpark, and Jupyter; Worked as Student Services Specialist supporting university data operations and reporting."
+            },
+            {
+                "University": "Vijaya Engineering College",
+                "Degree": "B.Tech in Computer Science Engineering",
+                "Location": "Khammam, Telangana, India",
+                "Start Date": "Aug 2016",
+                "End Date": "Aug 2020",
+                "GPA": "2.95 / 4.0",
+                "Activities": "Coding contests, seminars, final-year internship at Morgan Stanley",
+                "Achievements": "Completed final-year internship at Morgan Stanley developing portfolio reports and dashboards; Participated in coding contests, technical seminars, and academic projects; Built strong foundation in Data Structures, DBMS, and Operating Systems."
+            }
+        ];
+
+        // Function to try multiple image sources
+        function loadProfileImage() {
+            const profileImg = document.getElementById('profile-image');
+            const placeholder = document.getElementById('image-placeholder');
+            
+            // List of possible image sources (try them in order)
+            const imageSources = [
+                // Try your Google Drive URL first
+                'https://drive.google.com/uc?export=view&id=1z4KtcKEtHtazSxq63Roql_9wnQBYBDeH',
+                // Alternative Google Drive format
+                'https://lh3.googleusercontent.com/d/1z4KtcKEtHtazSxq63Roql_9wnQBYBDeH',
+                // Try loading from the view URL directly
+                'https://drive.google.com/file/d/1z4KtcKEtHtazSxq63Roql_9wnQBYBDeH/view?usp=sharing',
+                // Professional placeholder as last resort
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            ];
+            
+            let currentIndex = 0;
+            
+            function tryNextSource() {
+                if (currentIndex >= imageSources.length) {
+                    console.log('All image sources failed');
+                    profileImg.style.display = 'none';
+                    placeholder.style.display = 'flex';
+                    return;
+                }
+                
+                profileImg.src = imageSources[currentIndex];
+                currentIndex++;
+            }
+            
+            profileImg.onload = function() {
+                console.log('Image loaded successfully from:', profileImg.src);
+                profileImg.style.display = 'block';
+                placeholder.style.display = 'none';
+            };
+            
+            profileImg.onerror = function() {
+                console.log('Failed to load image from:', profileImg.src);
+                setTimeout(tryNextSource, 100);
+            };
+            
+            // Start trying sources
+            tryNextSource();
+        }
+
+        // Format date for display
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr.toLowerCase() === 'present') return 'Present';
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            const parts = dateStr.split(' ');
+            if (parts.length === 2) {
+                const month = parts[0].substring(0, 3);
+                const year = parts[1];
+                return `${month} ${year}`;
+            }
+            return dateStr;
+        }
+
+        // Populate Skills Section
+        function populateSkills() {
+            const skillsContainer = document.getElementById('skills-container');
+            skillsContainer.innerHTML = '';
+            
+            // Group skills by category
+            const skillsByCategory = {};
+            
+            skillsData.forEach(skill => {
+                const category = skill['Category'];
+                const skillsValue = skill['Skills'];
+                
+                if (category && skillsValue) {
+                    const skills = skillsValue.split(',').map(s => s.trim());
+                    
+                    if (!skillsByCategory[category]) {
+                        skillsByCategory[category] = [];
+                    }
+                    
+                    skillsByCategory[category].push(...skills.filter(s => s));
+                }
+            });
+            
+            // Create skill categories
+            Object.entries(skillsByCategory).forEach(([category, skills]) => {
+                if (skills.length > 0) {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'skill-category';
+                    
+                    const categoryTitle = document.createElement('h3');
+                    categoryTitle.textContent = category;
+                    
+                    const skillTagsDiv = document.createElement('div');
+                    skillTagsDiv.className = 'skill-tags';
+                    
+                    // Remove duplicates and empty strings
+                    const uniqueSkills = [...new Set(skills.filter(s => s && s.trim() !== ''))];
+                    
+                    uniqueSkills.forEach(skill => {
+                        const skillTag = document.createElement('span');
+                        skillTag.className = 'skill-tag';
+                        skillTag.textContent = skill;
+                        skillTagsDiv.appendChild(skillTag);
+                    });
+                    
+                    categoryDiv.appendChild(categoryTitle);
+                    categoryDiv.appendChild(skillTagsDiv);
+                    skillsContainer.appendChild(categoryDiv);
+                }
+            });
+        }
+
+        // Populate Experience Section
+        function populateExperience() {
+            const experienceContainer = document.getElementById('experience-container');
+            experienceContainer.innerHTML = '';
+            
+            experienceData.forEach((exp, index) => {
+                const experienceItem = document.createElement('div');
+                experienceItem.className = `experience-item ${index % 2 === 0 ? 'left' : 'right'}`;
+                
+                const experienceContent = document.createElement('div');
+                experienceContent.className = 'experience-content';
+                
+                const role = document.createElement('h3');
+                role.textContent = exp['Role'] || '';
+                
+                const company = document.createElement('p');
+                company.className = 'company';
+                company.textContent = `${exp['Company'] || ''} | ${exp['Location'] || ''}`;
+                
+                const duration = document.createElement('span');
+                duration.className = 'duration';
+                duration.textContent = `${formatDate(exp['Start Date'])} - ${formatDate(exp['End Date'])}`;
+                
+                const responsibilities = document.createElement('p');
+                responsibilities.textContent = exp['Responsibilities'] || '';
+                
+                const environment = document.createElement('p');
+                environment.innerHTML = `<strong>Technologies:</strong> ${exp['Environment'] || ''}`;
+                environment.style.marginTop = '1rem';
+                environment.style.color = '#666';
+                
+                experienceContent.appendChild(role);
+                experienceContent.appendChild(company);
+                experienceContent.appendChild(duration);
+                experienceContent.appendChild(responsibilities);
+                experienceContent.appendChild(environment);
+                experienceItem.appendChild(experienceContent);
+                
+                experienceContainer.appendChild(experienceItem);
+            });
+        }
+
+        // Populate Education Section
+        function populateEducation() {
+            const educationContainer = document.getElementById('education-container');
+            educationContainer.innerHTML = '';
+            
+            educationData.forEach(edu => {
+                const educationItem = document.createElement('div');
+                educationItem.className = 'education-item';
+                
+                const degree = document.createElement('h3');
+                degree.textContent = edu['Degree'];
+                
+                const university = document.createElement('p');
+                university.className = 'university';
+                university.textContent = `${edu['University']}, ${edu['Location']}`;
+                
+                const duration = document.createElement('p');
+                duration.textContent = `${formatDate(edu['Start Date'])} - ${formatDate(edu['End Date'])}`;
+                
+                const gpa = document.createElement('p');
+                gpa.innerHTML = `<strong>GPA:</strong> ${edu['GPA']}`;
+                
+                const activities = document.createElement('p');
+                activities.innerHTML = `<strong>Activities:</strong> ${edu['Activities']}`;
+                
+                const achievements = document.createElement('p');
+                achievements.innerHTML = `<strong>Achievements:</strong> ${edu['Achievements']}`;
+                
+                educationItem.appendChild(degree);
+                educationItem.appendChild(university);
+                educationItem.appendChild(duration);
+                educationItem.appendChild(gpa);
+                educationItem.appendChild(activities);
+                educationItem.appendChild(achievements);
+                
+                educationContainer.appendChild(educationItem);
+            });
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to load profile image from multiple sources
+            loadProfileImage();
+            
+            // Populate all sections with hardcoded data
+            populateSkills();
+            populateExperience();
+            populateEducation();
+            
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Update last updated time
+            function updateLastUpdated() {
+                const now = new Date();
+                const options = { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                };
+                document.getElementById('last-updated').textContent = 
+                    now.toLocaleDateString('en-US', options);
+            }
+            updateLastUpdated();
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add image upload functionality
+            setupImageUpload();
+        });
+
+        // Optional: Allow image upload from local computer
+        function setupImageUpload() {
+            const profileImg = document.getElementById('profile-image');
+            const placeholder = document.getElementById('image-placeholder');
+            
+            placeholder.addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                
+                input.onchange = function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            profileImg.src = e.target.result;
+                            profileImg.style.display = 'block';
+                            placeholder.style.display = 'none';
+                            
+                            // Save to localStorage so it persists
+                            localStorage.setItem('profileImage', e.target.result);
+                        };
+                        
+                        reader.readAsDataURL(file);
+                    }
+                };
+                
+                input.click();
+            });
+            
+            // Check if image was saved in localStorage
+            const savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                profileImg.src = savedImage;
+                profileImg.style.display = 'block';
+                placeholder.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
